@@ -40,10 +40,13 @@ export default function Sidebar({
       {/* Brand */}
       <div className="p-6">
         <div className="flex items-center gap-3">
-          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-vp-bg/40 border border-vp-border">
-            <span className="text-vp-primary font-extrabold tracking-wide">
-              VP
-            </span>
+          {/* Logo container */}
+          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-vp-bg/40 border border-vp-border overflow-hidden">
+            <img
+              src="/VP.png"
+              alt="Virtual Planet"
+              className="h-7 w-7 object-contain"
+            />
           </div>
 
           <div className="min-w-0 leading-tight">
@@ -73,14 +76,11 @@ export default function Sidebar({
                   title={item.disabledHint ?? "Bloqueado"}
                   aria-disabled="true"
                 >
-                  {/* Icon container */}
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl border border-vp-border bg-vp-bg/30 text-vp-muted">
                     {item.icon ? item.icon : <Lock size={18} />}
                   </span>
 
-                  <span className="min-w-0 flex-1 truncate">
-                    {item.label}
-                  </span>
+                  <span className="min-w-0 flex-1 truncate">{item.label}</span>
 
                   <span className="text-vp-muted">
                     <Lock size={14} />
@@ -98,7 +98,6 @@ export default function Sidebar({
               >
                 {({ isActive }) => (
                   <>
-                    {/* Icon container (si no hay icon, mostramos dot) */}
                     <span
                       className={[
                         "grid h-8 w-8 shrink-0 place-items-center rounded-xl border transition",
@@ -123,7 +122,6 @@ export default function Sidebar({
 
                     <span className="min-w-0 flex-1 truncate">{item.label}</span>
 
-                    {/* indicador activo */}
                     <span
                       className={[
                         "h-2 w-2 rounded-full transition",

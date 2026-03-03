@@ -6,8 +6,6 @@ import App from "./App";
 import "./index.css";
 import { AuthProvider } from "./core/auth/auth.context";
 
-import vpLogo from "./assets/VP.png";
-
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -15,7 +13,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          {/* Logo VP fijo arriba */}
           <div
             style={{
               width: "100%",
@@ -27,13 +24,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             }}
           >
             <img
-              src={vpLogo}
+              src="/VP.png"
               alt="Virtual Planet"
-              style={{
-                height: 40,
-                width: "auto",
-                objectFit: "contain",
-              }}
+              style={{ height: 40, width: "auto", objectFit: "contain" }}
             />
           </div>
 
